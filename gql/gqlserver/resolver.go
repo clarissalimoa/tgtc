@@ -14,9 +14,25 @@ func NewResolver() *Resolver {
 
 func (r *Resolver) GetProduct() graphql.FieldResolveFn {
 	return func(p graphql.ResolveParams) (interface{}, error) {
-		// id, _ := p.Args["product_id"].(int)
+		// id, _ := p.Args["product_id"].(int) //dipaksa jadi int
 
 		// update to use Usecase from previous session
 		return dictionary.Product{}, nil
 	}
 }
+
+// func (r *Resolver) GetAllProducts() graphql.FieldResolveFn {
+// 	return func(p graphql.ResolveParams) (interface{}, error) {
+// 		products, _ = service.GetAllProducts()
+// 		return products, nil
+// 	}
+// }
+
+// func (r *Resolver) AddProduct() graphql.FieldResolveFn {
+// 	return func(p graphql.ResolveParams) (interface{}, error) {
+// 		// id, _ := p.Args["product_id"].(int) //dipaksa jadi int
+
+// 		// update to use Usecase from previous session
+// 		return dictionary.Product{}, nil
+// 	}
+// }

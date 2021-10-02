@@ -30,16 +30,31 @@ func (s *SchemaWrapper) Init() error {
 					Type:        ProductType,
 					Description: "Get product by ID",
 					Args: graphql.FieldConfigArgument{
-						"product_id": &graphql.ArgumentConfig{
+						"id": &graphql.ArgumentConfig{
 							Type: graphql.Int,
 						},
 					},
 					Resolve: s.productResolver.GetProduct(),
 				},
+				// "AllProductsList": &graphql.Field{
+				// 	Type:        graphql.NewList(ProductType), //harus dibuat jadi list
+				// 	Description: "Get all products",
+				// 	Resolve:     s.productResolver.GetAllProducts(),
+				// },
 			},
 		}),
 		// uncomment this and add objects for mutation
-		// Mutation: graphql.NewObject(graphql.ObjectConfig{}),
+		// Mutation: graphql.NewObject(graphql.ObjectConfig{
+		// 	Name:        "ProductGetter",
+		// 	Description: "All query related to getting product data",
+		// 	Fields: graphql.Fields{
+		// 		"AddProduct": &graphql.Field{
+		// 			Type:        ProductType,
+		// 			Description: "Add new Product",
+		// 			Resolve:     s.productResolver.AddProduct(),
+		// 		},
+		// 	},
+		// }),
 	})
 
 	if err != nil {

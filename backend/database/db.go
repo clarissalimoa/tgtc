@@ -8,11 +8,15 @@ import (
 )
 
 const (
-	host     = "localhost"
+	host = "localhost"
+	// port     = 5432
+	// user     = "toped"
+	// password = "toped"
+	// dbname   = "toped"
 	port     = 5432
-	user     = "toped"
-	password = "toped"
-	dbname   = "toped"
+	user     = "postgres"
+	password = "123"
+	dbname   = "tgtc"
 )
 
 var DB *sql.DB
